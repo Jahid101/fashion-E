@@ -161,7 +161,7 @@ const index = () => {
                   >
                     {item.id}
                   </span>{" "}
-                  - Name: {item?.name}
+                  - Category: {item?.category}
                 </div>
               );
             })}
