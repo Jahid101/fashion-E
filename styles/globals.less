@@ -120,7 +120,7 @@ a {
 
 .ant-btn-primary:hover,
 .ant-btn-primary:focus {
-  background: #F09522 !important;
+  background: #f09522 !important;
 }
 
 @media (max-width: 650px) {
@@ -179,7 +179,7 @@ a {
   }
 
   .ant-drawer-header {
-    border-bottom: 2px solid #F09522;
+    border-bottom: 2px solid #f09522;
   }
 
   .ant-drawer-header-title {
@@ -188,7 +188,7 @@ a {
   }
 
   .ant-drawer-close {
-    color: #F09522;
+    color: #f09522;
   }
 }
 
@@ -1019,7 +1019,7 @@ a {
 }
 
 .primary-color {
-  color: #F09522 !important;
+  color: #f09522 !important;
 }
 
 .yellow-color {
@@ -1647,12 +1647,12 @@ a {
 }
 
 .nav-colored3 {
-  background-color: @primary;
+  // background-color: @primary;
   border-bottom: unset;
 }
 
 .nav-colored3 a {
-  color: white !important;
+  color: #000000 !important;
 }
 
 .nav-without-colored {
@@ -1664,12 +1664,17 @@ a {
 .nav-without-colored3 {
   // background-color: initial;
   // border-bottom: 1px solid initial;
-  background-color: @primary;
+  // background-color: @primary;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .nav-without-colored3 a {
   // color: #F09522;
-  color: #ffffff;
+  color: #000000;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
 }
 
 .header-menu-container {
@@ -1681,7 +1686,7 @@ a {
 }
 
 .header-menu-container2 {
-  background: #F09522;
+  background: #f09522;
   padding: 18px 8%;
   z-index: 1000;
   position: fixed;
@@ -1691,7 +1696,8 @@ a {
 .header-menu-container3 {
   padding: 18px 8%;
   z-index: 1000;
-  position: fixed;
+  // position: fixed;
+  height: 75px;
   display: flex;
 
   box-shadow: 0 1px 7px 1px #4848486b;
