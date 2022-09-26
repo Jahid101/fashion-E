@@ -12,11 +12,7 @@ const index = () => {
   return (
     <AppLayout>
       <Topbar></Topbar>
-      {/* <div className="navbarDiv"> */}
-        <Navbar></Navbar>
-      {/* </div> */}
-      <Profile></Profile>
-      <ProfileSettings></ProfileSettings>
+      <Navbar></Navbar>
     </AppLayout>
   );
 };
