@@ -5,34 +5,17 @@ import SignupComponent from "@Components/SignupComponent";
 import Topbar from "@Components/Topbar";
 import AppLayout from "@layout/layout";
 import {
-  Button,
-  Col,
-  Divider,
-  Form,
-  Input,
   message,
   Radio,
-  RadioChangeEvent,
-  Row,
-  Switch,
+  RadioChangeEvent
 } from "antd";
-import { ValidateStatus } from "antd/es/form/FormItem";
 import router from "next/router";
-import React, { useState } from "react";
+import { useState } from "react";
 require("./index.less");
 
 const index = () => {
-  const [loading, setLoading] = useState(false);
-  const [data, setData]: any = useState([]);
   const [value, setValue] = useState(2);
-
-  const [option1, setOption1] = useState(true);
-  const [option2, setOption2] = useState(false);
-  const [option3, setOption3] = useState(true);
-  const [option4, setOption4] = useState(true);
-
   const [btnLoad, setBtnLoad] = useState(false);
-
   const [email, setEmail] = useState({ value: "", validateStatus: "" } as any);
   const [password, setPassword] = useState({
     value: "",

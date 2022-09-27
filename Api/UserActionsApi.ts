@@ -3,6 +3,7 @@ import http from "./Common";
 class UserActionsApi {
   static endpoint = {
     data: "/products?limit=",
+    getOneData: "/products/",
   };
 
   getHeaders = (token: string) => {
@@ -14,6 +15,11 @@ class UserActionsApi {
 
   getData = (dataCount: number) => {
     return http.get(`${UserActionsApi.endpoint.data}` + dataCount, {
+      // headers: this.getHeaders(token),
+    });
+  };
+  getOneData = (id: number) => {
+    return http.get(`${UserActionsApi.endpoint.getOneData}` + id, {
       // headers: this.getHeaders(token),
     });
   };

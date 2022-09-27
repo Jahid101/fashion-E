@@ -1,6 +1,5 @@
 import { Col, Divider, Row } from "antd";
 import Link from "next/link";
-import React from "react";
 require("./index.less");
 
 const index = () => {
