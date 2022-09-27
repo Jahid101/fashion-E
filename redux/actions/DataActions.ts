@@ -1,6 +1,6 @@
 import UserActionsApi from "Api/UserActionsApi";
 
-class UserDataActions {
+class DataActions {
   getData = (success: any, errorLoad: any) => {
     UserActionsApi
       .getData()
@@ -16,4 +16,4 @@ class UserDataActions {
   };
 }
 
-export default new UserDataActions();
+export default new DataActions();
