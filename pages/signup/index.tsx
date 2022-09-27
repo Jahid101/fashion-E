@@ -19,7 +19,6 @@ import {
 import { ValidateStatus } from "antd/es/form/FormItem";
 import router from "next/router";
 import React, { useState } from "react";
-import UserDataActions from "redux/actions/UserDataActions";
 require("./index.less");
 
 const index = () => {

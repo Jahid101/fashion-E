@@ -13,7 +13,6 @@ import {
 } from "antd";
 import { ValidateStatus } from "antd/es/form/FormItem";
 import React, { useState } from "react";
-import UserDataActions from "redux/actions/UserDataActions";
 require("./index.less");
 
 const index = () => {
