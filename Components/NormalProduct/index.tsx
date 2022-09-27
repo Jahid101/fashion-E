@@ -12,7 +12,7 @@ const index = () => {
   }, []);
 
   const getData = () => {
-    DataActions.getData(
+    DataActions.getData(3,
       (success: any) => {
         console.log("success=>", success);
         setLoading(false);
