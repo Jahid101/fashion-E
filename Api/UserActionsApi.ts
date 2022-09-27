@@ -2,7 +2,7 @@ import http from "./Common";
 
 class UserActionsApi {
   static endpoint = {
-    users: "/products",
+    users: "/products?limit=3",
   };
 
   getHeaders = (token: string) => {

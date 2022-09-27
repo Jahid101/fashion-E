@@ -1,9 +1,10 @@
+import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import DataActions from "redux/actions/DataActions";
 require("./index.less");
 
 const index = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading]: any = useState(true);
   const [data, setData]: any = useState([]);
 
   useEffect(() => {
@@ -25,22 +26,25 @@ const index = () => {
   };
 
   return (
-    <div>
-      <div></div>
-      <div className="mt-15">
-        {data?.map((item: any, index: any) => {
-          return (
-            <div key={index}>
-              <span
-                style={item.id % 2 == 0 ? { color: "red" } : { color: "green" }}
-              >
-                {item.id}
-              </span>{" "}
-              - Category: {item?.category}
-            </div>
-          );
-        })}
-      </div>
+    <div className="normalProduct">
+      {/* <div className="normalProductOuterDiv"> */}
+        {data.length < 1 && (
+          <div className="spinGlobalCss">
+            {/* @ts-ignore */}
+            <Spin spin={loading} />
+          </div>
+        )}
+        {data &&
+          data?.map((item: any, index: any) => {
+            return (
+              <div key={index} className="">
+                <div className="normalProductInnerDiv">
+                  <img src={item?.image} alt="product" className="productImg"/>
+                </div>
+              </div>
+            );
+          })}
+      {/* </div> */}
     </div>
   );
 };
