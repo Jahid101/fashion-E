@@ -1,0 +1,86 @@
+.signupSectionMargin {
+  margin: 120px auto;
+  max-width: 1068px;
+}
+
+.signupSectionOuterDiv {
+  //   display: flex;
+  //   display: grid;
+  //   grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr)
+  //   display: grid;
+  //   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  //   justify-items: center;
+  //   grid-gap: 1rem 1rem;
+}
+
+.signupSectionTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+
+  margin-bottom: 25px;
+
+  color: #000000;
+}
+
+.signupSectionSubTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+}
+
+.signupSectionInnerDiv {
+  width: 433px;
+  height: 284px;
+}
+
+.productImg {
+  width: 100%;
+  height: 100%;
+}
+
+.leftSection {
+  padding: 3% 100px;
+  background: #f3880045;
+}
+
+.flexIt {
+  display: flex;
+}
+
+@media (max-width: 906px) {
+  .flexIt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signupSectionInnerDiv {
+    width: 100%;
+    height: 284px;
+  }
+}
+
+@media (max-width: 576px) {
+  .signupSectionTitle {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 24px;
+
+    margin-bottom: 25px;
+
+    color: #000000;
+  }
+
+  .leftSection {
+    padding: 20px;
+    background: #f3880045;
+  }
+}

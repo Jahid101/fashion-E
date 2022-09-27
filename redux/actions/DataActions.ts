@@ -1,9 +1,8 @@
 import UserActionsApi from "Api/UserActionsApi";
 
-class UserDataActions {
-  getData = (success: any, errorLoad: any) => {
-    UserActionsApi
-      .getData()
+class DataActions {
+  getData = (dataCount: number, success: any, errorLoad: any) => {
+    UserActionsApi.getData(dataCount)
       .then((response: any) => {
         if (response.status == 201 || response.status == 200) {
           success(response.data);
@@ -16,4 +15,4 @@ class UserDataActions {
   };
 }
 
-export default new UserDataActions();
+export default new DataActions();

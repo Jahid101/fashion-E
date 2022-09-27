@@ -1,7 +1,7 @@
 import { Button, Col, Divider, Form, Input, message, Row, Switch } from "antd";
 import { ValidateStatus } from "antd/es/form/FormItem";
 import React, { useState } from "react";
-import UserDataActions from "redux/actions/UserDataActions";
+import UserDataActions from "redux/actions/DataActions";
 require("./index.less");
 
 const index = () => {
