@@ -8,6 +8,7 @@ import {
   Row,
   Select,
 } from "antd";
+import router from "next/router";
 import React from "react";
 require("./index.less");
 
@@ -27,14 +28,37 @@ const index = (props: any) => {
   return (
     <div className="section-container">
       <div className="productById">
-        <div className="imgDiv">
-          <img
-            src={props?.data?.image}
-            alt="Product"
-            className="productByIdImg"
-          />
+        {/* Left Site */}
+        <div className=" mr-20">
+          <div className="imgDiv">
+            <img
+              src={props?.data?.image}
+              alt="Product"
+              className="productByIdImg"
+            />
+          </div>
+
+          <div className="flexSmImg">
+            {props.data2 &&
+              props.data2.map((item: any, index: any) => {
+                return (
+                  <div>
+                    <img
+                      src={item.image}
+                      alt="product"
+                      className="smallProductImg"
+                      onClick={() => {
+                        router.push(`/product/${item.id}`);
+                        props.setRng(Math.random);
+                      }}
+                    />
+                  </div>
+                );
+              })}
+          </div>
         </div>
 
+        {/* Right Site */}
         <div>
           <div className="pTitle">{props?.data?.title}</div>
           <div className="pTitle">
@@ -197,6 +221,24 @@ const index = (props: any) => {
               </span>
             </Checkbox>
           </div>
+
+          {/* <div className="flex">
+            {props.data2 &&
+              props.data2.map((item: any, index: any) => {
+                return (
+                  <div>
+                    <img
+                      src={item.image}
+                      alt="product"
+                      className="smallProductImg"
+                      onClick={() => {
+                        router.push(`/product/${item.id}`);
+                      }}
+                    />
+                  </div>
+                );
+              })}
+          </div> */}
         </div>
       </div>
     </div>
