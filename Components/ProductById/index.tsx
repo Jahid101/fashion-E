@@ -9,12 +9,13 @@ import {
   Select,
 } from "antd";
 import router from "next/router";
-import React from "react";
+import React, { useState } from "react";
 require("./index.less");
 
 const { Option } = Select;
 
 const index = (props: any) => {
+  const [clr, setClr] = useState(false);
   console.log("props", props);
 
   const onChange = (value: string) => {
@@ -49,7 +50,8 @@ const index = (props: any) => {
                       className="smallProductImg cursor"
                       onClick={() => {
                         router.push(`/product/${item.id}`);
-                        props.setRng(Math.random);
+                        // props.setRng(Math.random);
+                        props.getData(item.id);
                       }}
                     />
                   </div>
@@ -60,7 +62,7 @@ const index = (props: any) => {
 
         {/* Right Site */}
         <div>
-          <div className="pTitle">{props?.data?.title}</div>
+          <div className={clr ? "pTitle2" : "pTitle"}>{props?.data?.title}</div>
           <div className="pTitle">
             <span className="newPrice">${props?.data?.price}</span>{" "}
             <span className="oldPrice">${props?.data?.price}</span>
@@ -75,7 +77,15 @@ const index = (props: any) => {
 
           <div className="flexColor">
             <div className="text-18 weight-600">Colors</div>
-            <div className="clr1 cursor"></div>
+            <div
+              className={"clr1 cursor"}
+              onMouseOver={() => {
+                setClr(true);
+              }}
+              onMouseOut={() => {
+                setClr(false);
+              }}
+            ></div>
             <div className="clr2 cursor"></div>
             <div className="clr3 cursor"></div>
           </div>

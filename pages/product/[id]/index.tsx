@@ -70,7 +70,7 @@ const index = () => {
     <AppLayout>
       <Topbar></Topbar>
       <Navbar></Navbar>
-      <ProductById data={oneData} data2={data} setRng={setRng}></ProductById>
+      <ProductById data={oneData} data2={data} setRng={setRng} getData={getData}></ProductById>
       <FastDelivery></FastDelivery>
       <PopularProduct></PopularProduct>
       <Footer></Footer>
