@@ -104,6 +104,10 @@ const index = (props: any) => {
               <Menu.Item key="6" icon={<SnippetsOutlined />} className="mb-20">
                 <Link href="/blog">Blog</Link>
               </Menu.Item>
+
+              <Menu.Item key="7" icon={<UserOutlined />} className="mb-20">
+                <Link href="/login">Login</Link>
+              </Menu.Item>
             </Menu>
           </div>
 
