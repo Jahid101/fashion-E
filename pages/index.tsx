@@ -1,3 +1,5 @@
+
+import Footer from "@Components/Footer";
 import Navbar from "@Components/Navbar";
 import Profile from "@Components/Profile";
 import ProfileSettings from "@Components/ProfileSettings";
@@ -13,6 +15,7 @@ const index = () => {
     <AppLayout>
       <Topbar></Topbar>
       <Navbar></Navbar>
+      <Footer></Footer>
     </AppLayout>
   );
 };
