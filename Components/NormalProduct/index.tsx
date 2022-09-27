@@ -1,4 +1,5 @@
 import { Spin } from "antd";
+import router from "next/router";
 import React, { useEffect, useState } from "react";
 import DataActions from "redux/actions/DataActions";
 require("./index.less");
@@ -12,7 +13,8 @@ const index = () => {
   }, []);
 
   const getData = () => {
-    DataActions.getData(3,
+    DataActions.getData(
+      3,
       (success: any) => {
         console.log("success=>", success);
         setLoading(false);
@@ -28,22 +30,31 @@ const index = () => {
   return (
     <div className="normalProduct">
       {/* <div className="normalProductOuterDiv"> */}
-        {data.length < 1 && (
-          <div className="spinGlobalCss">
-            {/* @ts-ignore */}
-            <Spin spin={loading} />
-          </div>
-        )}
-        {data &&
-          data?.map((item: any, index: any) => {
-            return (
-              <div key={index} className="">
-                <div className="normalProductInnerDiv">
-                  <img src={item?.image} alt="product" className="productImg"/>
-                </div>
+      {data.length < 1 && (
+        <div className="spinGlobalCss">
+          {/* @ts-ignore */}
+          <Spin spin={loading} />
+        </div>
+      )}
+      {data &&
+        data?.map((item: any, index: any) => {
+          return (
+            <div key={index} className="">
+              <div
+                className="normalProductInnerDiv cursor"
+                onClick={() => {
+                  router.push(`/product/${item.id}`);
+                }}
+              >
+                <img
+                  src={item?.image}
+                  alt="product"
+                  className="productImg cursor"
+                />
               </div>
-            );
-          })}
+            </div>
+          );
+        })}
       {/* </div> */}
     </div>
   );

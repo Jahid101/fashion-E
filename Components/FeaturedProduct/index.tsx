@@ -1,4 +1,5 @@
 import { Col, Row, Spin } from "antd";
+import router from "next/router";
 import React, { useEffect, useState } from "react";
 import DataActions from "redux/actions/DataActions";
 require("./index.less");
@@ -69,14 +70,17 @@ const index = () => {
                   <div
                     className={
                       index == 4
-                        ? "hideIt featuredProductInnerDiv"
-                        : "featuredProductInnerDiv"
+                        ? "hideIt featuredProductInnerDiv cursor"
+                        : "featuredProductInnerDiv cursor"
                     }
+                    onClick={() => {
+                      router.push(`/product/${item.id}`);
+                    }}
                   >
                     <img
                       src={item?.image}
                       alt="product"
-                      className="productImg"
+                      className="productImg cursor"
                     />
                   </div>
                 </div>
@@ -86,7 +90,12 @@ const index = () => {
 
         <div className="mt-50 oneDiv">
           <div className="">
-            <div className={"featuredProductInnerDiv2"}>
+            <div
+              className={"featuredProductInnerDiv2 cursor"}
+              onClick={() => {
+                router.push(`/product/${oneData?.id}`);
+              }}
+            >
               <img src={oneData?.image} alt="product" className="productImg2" />
             </div>
           </div>

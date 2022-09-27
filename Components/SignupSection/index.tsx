@@ -41,7 +41,7 @@ const index = () => {
 
         <div>
           <div className="signupSectionInnerDiv">
-            <img src="/images/shirt.png" alt="product" className="productImg" />
+            <img src="/images/shirt.png" alt="product" className="productImg cursor" />
           </div>
         </div>
 

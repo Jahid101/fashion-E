@@ -1,4 +1,5 @@
 import { Spin } from "antd";
+import router from "next/router";
 import React, { useEffect, useState } from "react";
 import DataActions from "redux/actions/DataActions";
 require("./index.less");
@@ -49,8 +50,17 @@ const index = () => {
           data?.map((item: any, index: any) => {
             return (
               <div key={index} className="">
-                <div className="popularProductInnerDiv">
-                  <img src={item?.image} alt="product" className="productImg" />
+                <div
+                  className="popularProductInnerDiv cursor"
+                  onClick={() => {
+                    router.push(`/product/${item.id}`);
+                  }}
+                >
+                  <img
+                    src={item?.image}
+                    alt="product"
+                    className="productImg cursor"
+                  />
                 </div>
               </div>
             );
