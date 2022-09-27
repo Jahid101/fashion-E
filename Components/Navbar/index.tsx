@@ -123,14 +123,11 @@ const index = (props: any) => {
               </div>
 
               <div className="mr-35">
-                <img
-                  src="/images/avatar.svg"
-                  alt=""
-                  className="cursor"
-                  onClick={() => {
-                    message.warn("Coming soon");
-                  }}
-                />
+                <Link href="/login">
+                  <a href="/login">
+                    <img src="/images/avatar.svg" alt="" className="cursor" />
+                  </a>
+                </Link>
               </div>
 
               <div className="">
@@ -146,8 +143,6 @@ const index = (props: any) => {
             </div>
           </div>
         </div>
-
-        {/* <div className="mobile-menu" style={{ width: "100%" }}><MobileDrawer></MobileDrawer></div> */}
 
         <div className="mobile-menu" style={{ width: "100%" }}>
           <div>
@@ -169,57 +164,6 @@ const index = (props: any) => {
         </div>
         <MobileDrawer visible={visible} setVisible={setVisible}></MobileDrawer>
       </div>
-
-      {/* <Drawer
-        title="Menu"
-        placement="left"
-        width={"100%"}
-        closable={true}
-        onClose={() => {
-          setVisible(false);
-        }}
-        visible={visible}
-      >
-        <div className="listBody">
-          <Link href="/">
-            <a href="/">
-              <div className="">Home</div>
-            </a>
-          </Link>
-        </div>
-
-        <div className="listBody">
-          <Link href="/mentor-list">
-            <a href="/mentor-list">
-              <div className="">Mentors List</div>
-            </a>
-          </Link>
-        </div>
-
-        <div className="listBody">
-          <Link href="/how-it-works">
-            <a href="/how-it-works">
-              <div className="">How It Works</div>
-            </a>
-          </Link>
-        </div>
-
-        <div className="listBody">
-          <Link href="/login">
-            <a href="/login">
-              <div className="">Login</div>
-            </a>
-          </Link>
-        </div>
-
-        <div className="listBody">
-          <Link href="/registration">
-            <a href="/registration">
-              <div className="">Register</div>
-            </a>
-          </Link>
-        </div>
-      </Drawer> */}
     </>
   );
 };
