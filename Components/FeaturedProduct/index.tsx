@@ -1,4 +1,4 @@
-import { Spin } from "antd";
+import { Col, Row, Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import DataActions from "redux/actions/DataActions";
 require("./index.less");
@@ -7,7 +7,7 @@ const index = () => {
   const [loading, setLoading]: any = useState(true);
   const [loading2, setLoading2]: any = useState(true);
   const [data, setData]: any = useState([]);
-  const [data2, setData2]: any = useState([]);
+  const [oneData, setOneData]: any = useState({});
 
   useEffect(() => {
     getData();
@@ -30,12 +30,12 @@ const index = () => {
   };
 
   const getData2 = () => {
-    DataActions.getData(
-      1,
+    DataActions.getOneData(
+      5,
       (success: any) => {
         console.log("success=>", success);
         setLoading2(false);
-        setData2(success);
+        setOneData(success);
       },
       (error: any) => {
         console.log("error=>", error);
@@ -54,10 +54,8 @@ const index = () => {
         </div>
       </div>
 
-      {/* <div className="flex"> */}
+      <div className="flexingIt">
         <div className="featuredProduct">
-          {/* <div className="normalProductOuterDiv"> */}
-
           {data.length < 1 && (
             <div className="spinGlobalCss">
               {/* @ts-ignore */}
@@ -68,7 +66,13 @@ const index = () => {
             data?.map((item: any, index: any) => {
               return (
                 <div key={index} className="">
-                  <div className={"featuredProductInnerDiv"}>
+                  <div
+                    className={
+                      index == 4
+                        ? "hideIt featuredProductInnerDiv"
+                        : "featuredProductInnerDiv"
+                    }
+                  >
                     <img
                       src={item?.image}
                       alt="product"
@@ -78,26 +82,16 @@ const index = () => {
                 </div>
               );
             })}
-          {/* </div> */}
         </div>
 
-        {/* <div className="mt-50">
-          {data &&
-            data2?.map((item: any, index: any) => {
-              return (
-                <div key={index} className="">
-                  <div className={"featuredProductInnerDiv2"}>
-                    <img
-                      src={item?.image}
-                      alt="product"
-                      className="productImg2"
-                    />
-                  </div>
-                </div>
-              );
-            })}
-        </div> */}
-      {/* </div> */}
+        <div className="mt-50 oneDiv">
+          <div className="">
+            <div className={"featuredProductInnerDiv2"}>
+              <img src={oneData?.image} alt="product" className="productImg2" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,26 +1,16 @@
 import {
-  Button,
-  Checkbox,
-  Col,
+  Button, Col,
   Divider,
   Form,
   Input,
-  message,
-  Radio,
-  RadioChangeEvent,
-  Row,
-  Switch,
+  message, Row
 } from "antd";
 import { ValidateStatus } from "antd/es/form/FormItem";
-import React, { useState } from "react";
+import { useState } from "react";
 require("./index.less");
 
 const index = () => {
-  const [loading, setLoading] = useState(false);
-  const [data, setData]: any = useState([]);
-
   const [btnLoad, setBtnLoad] = useState(false);
-
   const [fname, setFname] = useState({ value: "", validateStatus: "" } as any);
   const [lname, setLname] = useState({ value: "", validateStatus: "" } as any);
   const [email, setEmail] = useState({ value: "", validateStatus: "" } as any);
