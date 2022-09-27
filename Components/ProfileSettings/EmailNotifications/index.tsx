@@ -29,7 +29,7 @@ const index = () => {
     setLoading(true);
     setOption2(checked);
 
-    UserDataActions.getData(
+    UserDataActions.getData(5,
       (success: any) => {
         console.log("success=>", success);
         setLoading(false);
