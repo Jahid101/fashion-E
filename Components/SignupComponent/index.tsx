@@ -171,11 +171,11 @@ const index = () => {
               or
             </Divider>
 
-            <small className="text-center">Sign in with</small>
+            <small className="text-center weight-600">Sign in with</small>
 
             <div className="text-center">
-              <img src="/images/google.svg" alt="" className="mr-10 cursor" />
-              <img src="/images/fb2.svg" alt="" className="mr-10 cursor" />
+              <img src="/images/google.svg" alt="" className="mr-20 cursor" />
+              <img src="/images/fb2.svg" alt="" className="mr-20 cursor" />
               <img src="/images/ln.svg" alt="" className="cursor" />
             </div>
           </div>

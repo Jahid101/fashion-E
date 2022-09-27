@@ -112,7 +112,7 @@ const index = () => {
           onFinish={onSubmit}
           className="custom-row-space-height"
         >
-          <div>
+          <div className="">
             <Row className="mt-30 leftPadding">
               <Col span={24} className="colRight mb-15">
                 <div className="inputTitle">Email</div>
@@ -154,7 +154,6 @@ const index = () => {
                 </Form.Item>
               </Col>
             </Row>
-
             <div className="flex space-between forgotPass mb-30">
               <div>Forgot Your Password</div>
               <div>
@@ -163,7 +162,6 @@ const index = () => {
                 </Checkbox>
               </div>
             </div>
-
             <Button
               className="submitBtn mt-30"
               htmlType="submit"
@@ -174,15 +172,59 @@ const index = () => {
             </Button>
 
             <Divider plain style={{ borderColor: "black" }}>
-              or
+              <span className="weight-600">or</span>
             </Divider>
 
-            <small className="text-center">Sign in with</small>
+            <div className="text-center weight-600 m-auto text-10 mb-10">
+              Sign in with
+            </div>
+            <div className="text-center mb-30">
+              <img
+                src="/images/google.svg"
+                alt=""
+                className="mr-20 cursor"
+                onClick={() => {
+                  message.warn("Coming soon");
+                }}
+              />
+              <img
+                src="/images/fb2.svg"
+                alt=""
+                className="mr-20 cursor"
+                onClick={() => {
+                  message.warn("Coming soon");
+                }}
+              />
+              <img
+                src="/images/ln.svg"
+                alt=""
+                className="cursor"
+                onClick={() => {
+                  message.warn("Coming soon");
+                }}
+              />
+            </div>
 
-            <div className="text-center">
-              <img src="/images/google.svg" alt="" className="mr-10 cursor" />
-              <img src="/images/fb2.svg" alt="" className="mr-10 cursor" />
-              <img src="/images/ln.svg" alt="" className="cursor" />
+            <div className="text-10 text-center flex mb-50 privacy">
+              <div
+                className="cursor"
+                onClick={() => {
+                  message.warn("Coming soon");
+                }}
+              >
+                Privacy Policy and Cookies
+              </div>
+
+              <div className="weight-600 ml-10 mr-10">|</div>
+
+              <div
+                className="cursor"
+                onClick={() => {
+                  message.warn("Coming soon");
+                }}
+              >
+                Terms of Sale and Us
+              </div>
             </div>
           </div>
         </Form>
