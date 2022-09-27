@@ -46,7 +46,7 @@ const index = (props: any) => {
                     <img
                       src={item.image}
                       alt="product"
-                      className="smallProductImg"
+                      className="smallProductImg cursor"
                       onClick={() => {
                         router.push(`/product/${item.id}`);
                         props.setRng(Math.random);
