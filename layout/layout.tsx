@@ -10,8 +10,8 @@ const AppLayout = ({ children }: any) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Project-101</title>
-        <meta name="description" content="Project-101" />
+        <title>Funshion</title>
+        <meta name="description" content="Funshion" />
 
         {/* For not auto zoom in mobile devices */}
         <meta
