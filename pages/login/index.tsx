@@ -1,8 +1,20 @@
 import LoginComponent from "@Components/LoginComponent";
 import Navbar from "@Components/Navbar";
+import SignupComponent from "@Components/SignupComponent";
 import Topbar from "@Components/Topbar";
 import AppLayout from "@layout/layout";
-import { Button, Col, Divider, Form, Input, message, Row, Switch } from "antd";
+import {
+  Button,
+  Col,
+  Divider,
+  Form,
+  Input,
+  message,
+  Radio,
+  RadioChangeEvent,
+  Row,
+  Switch,
+} from "antd";
 import { ValidateStatus } from "antd/es/form/FormItem";
 import React, { useState } from "react";
 import UserDataActions from "redux/actions/UserDataActions";
@@ -11,6 +23,7 @@ require("./index.less");
 const index = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData]: any = useState([]);
+  const [value, setValue] = useState(1);
 
   const [option1, setOption1] = useState(true);
   const [option2, setOption2] = useState(false);
@@ -94,11 +107,35 @@ const index = () => {
     setBtnLoad(false);
   };
 
+  const onChange = (e: RadioChangeEvent) => {
+    console.log("radio checked", e.target.value);
+    setValue(e.target.value);
+  };
+
   return (
     <AppLayout>
       <Topbar></Topbar>
       <Navbar></Navbar>
-      <LoginComponent></LoginComponent>
+
+      <div className="loginDiv">
+        <div className="loginDivTitle">
+          <div>WELCOME</div>
+          <div>PLEASE SIGN IN!</div>
+        </div>
+
+        <div className="loginDivRadio">
+          <Radio.Group onChange={onChange} value={value}>
+            <Radio value={1}>Sign In</Radio>
+            <Radio value={2}>Create Account</Radio>
+          </Radio.Group>
+        </div>
+
+        {value == 1 ? (
+          <LoginComponent></LoginComponent>
+        ) : (
+          <SignupComponent></SignupComponent>
+        )}
+      </div>
     </AppLayout>
   );
 };

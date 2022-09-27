@@ -20,13 +20,6 @@ const index = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData]: any = useState([]);
 
-  const [value, setValue] = useState(1);
-
-  const [option1, setOption1] = useState(true);
-  const [option2, setOption2] = useState(false);
-  const [option3, setOption3] = useState(true);
-  const [option4, setOption4] = useState(true);
-
   const [btnLoad, setBtnLoad] = useState(false);
 
   const [email, setEmail] = useState({ value: "", validateStatus: "" } as any);
@@ -86,6 +79,12 @@ const index = () => {
         value: password.value.trim(),
       });
       error = false;
+    } else if (password.value.length < 8) {
+      setPassword({
+        ...setValidation("error", "Password should have at least 8 characters"),
+        value: password.value.trim(),
+      });
+      error = false;
     }
 
     return error;
@@ -96,11 +95,6 @@ const index = () => {
     setEmail({ value: "", validateStatus: "" } as any);
     setPassword({ value: "", validateStatus: "" } as any);
     setBtnLoad(false);
-  };
-
-  const onChange = (e: RadioChangeEvent) => {
-    console.log("radio checked", e.target.value);
-    setValue(e.target.value);
   };
 
   return (
@@ -170,7 +164,7 @@ const index = () => {
               type="primary"
               loading={btnLoad}
             >
-              Sign In
+              Sign Up
             </Button>
 
             <Divider plain style={{ borderColor: "black" }}>
