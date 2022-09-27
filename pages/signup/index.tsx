@@ -5,18 +5,27 @@ import SignupComponent from "@Components/SignupComponent";
 import Topbar from "@Components/Topbar";
 import AppLayout from "@layout/layout";
 import {
+  Button,
+  Col,
+  Divider,
+  Form,
+  Input,
   message,
   Radio,
-  RadioChangeEvent
+  RadioChangeEvent,
+  Row,
+  Switch,
 } from "antd";
+import { ValidateStatus } from "antd/es/form/FormItem";
 import router from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
+import UserDataActions from "redux/actions/UserDataActions";
 require("./index.less");
 
 const index = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData]: any = useState([]);
-  const [value, setValue] = useState(1);
+  const [value, setValue] = useState(2);
 
   const [option1, setOption1] = useState(true);
   const [option2, setOption2] = useState(false);
@@ -104,8 +113,8 @@ const index = () => {
     console.log("radio checked", e.target.value);
     setValue(e.target.value);
 
-    if (e.target.value == 2) {
-      router.push("/signup", undefined, { shallow: true });
+    if (e.target.value == 1) {
+      router.push("/login", undefined, { shallow: true });
     }
   };
 
